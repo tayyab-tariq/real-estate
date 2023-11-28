@@ -6,9 +6,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://real-estate-dg76.onrender.com/',
-        // target: 'http://localhost:5000/',
-        // secure: true,
+        target: 'http://localhost:5000',
+        secure: false,
       },
     },
   },
