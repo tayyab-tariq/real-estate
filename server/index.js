@@ -1,5 +1,4 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/userRoute.js';
 import authRouter from './routes/authRoute.js';
@@ -7,6 +6,8 @@ import listingRouter from './routes/listingRoute.js';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import connectDB from './config/db.js';
+import cors from 'cors';
+
 dotenv.config();
 
 /*  DB Connection   */
@@ -20,6 +21,11 @@ const app = express();
 app.use(express.json());
 
 app.use(cookieParser());
+app.use(cors({
+  credentials: true,
+  // origin: 'https://devtt-real-estate.netlify.app/',
+  origin: 'http://localhost:5173/',
+}));
 
 app.listen(process.env.PORT || 3000, () => {
   console.log(`Server is running on port ${process.env.PORT}!`);
