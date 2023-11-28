@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -11,9 +11,7 @@ import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
 import { ToastContainer } from 'react-toastify';
-import axios from 'axios';
 import 'react-toastify/dist/ReactToastify.css';
-import { useDispatch } from 'react-redux';
 
 const App = () => {
 
