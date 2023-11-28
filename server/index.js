@@ -23,8 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
   credentials: true,
-  // origin: 'https://devtt-real-estate.netlify.app/',
-  origin: 'http://localhost:5173/',
+  origin: 'https://devtt-real-estate.netlify.app',
 }));
 
 app.listen(process.env.PORT || 3000, () => {
