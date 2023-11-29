@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
+        changeOrigin: true,
         target: 'https://real-estate-dg76.onrender.com',
         secure: true,
       },
