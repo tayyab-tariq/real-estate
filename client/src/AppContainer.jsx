@@ -28,10 +28,9 @@ const AppContainer = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(() => {
-      const baseUrl = import.meta.env.VITE_BASE_URL;
       const checkServerStatus = async () => {
         try {
-          await axios.get(`${baseUrl}/server-status`);
+          await axios.get(`/api/server-status`);
         } catch (err) {
           setServer(true);
           setError('Server Error');
