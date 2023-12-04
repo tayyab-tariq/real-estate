@@ -32,6 +32,9 @@ app.listen(process.env.PORT || 3000, () => {
 
 
 /*  Routes   */
+app.get("/api/server-status", (req, res) => {
+  res.json({ message: "Server is up and running!" });
+});
 app.use('/api/user', userRouter);
 app.use('/api/auth', authRouter);
 app.use('/api/listing', listingRouter);
