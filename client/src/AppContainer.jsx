@@ -14,7 +14,7 @@ import FallbackLoading from "./components/FallbackLoading";
 
 
 const ErrorComponent = ({ errorMessage, server }) => (
-    <div> {(server ? <PulseLoading /> : {errorMessage})}</div>
+    <div> {(server ? <PulseLoading /> : errorMessage)}</div>
 );
 
 ErrorComponent.propTypes = {
@@ -63,7 +63,7 @@ const AppContainer = () => {
     if (loading || error || server) {
       return (
         <div className="flex items-center justify-center h-screen">
-          {loading ? <FallbackLoading /> : <ErrorComponent errorMessage={error} server/>}
+          {loading ? <FallbackLoading /> : <ErrorComponent errorMessage={error} server={server}/>}
         </div>
       );
     }

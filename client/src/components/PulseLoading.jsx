@@ -14,7 +14,7 @@ const override = {
   marginLeft: "2rem",
 };
 
-const FallbackLoading = () => {
+const PulseLoading = () => {
   return (
     <div style={styles}>
       <p>
@@ -26,4 +26,4 @@ const FallbackLoading = () => {
   );
 };
 
-export default FallbackLoading;
+export default PulseLoading;

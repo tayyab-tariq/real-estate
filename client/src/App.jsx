@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
+import { Suspense } from 'react';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
@@ -12,11 +13,12 @@ import Listing from './pages/Listing';
 import Search from './pages/Search';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import FallbackLoading from './components/FallbackLoading';
 
 const App = () => {
 
   return (
-    <>
+    <Suspense fallback={<FallbackLoading />}>
       <Header />
       <ToastContainer
         position="top-right"
@@ -46,7 +48,7 @@ const App = () => {
           />
         </Route>
       </Routes>
-    </>
+    </Suspense>
   );
 };
 
