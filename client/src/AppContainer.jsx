@@ -30,7 +30,12 @@ const AppContainer = () => {
     useEffect(() => {
       const checkServerStatus = async () => {
         try {
-          await axios.get(`/api/server-status`);
+          await axios({
+            method: 'get',
+            url: `/api/server-status`,
+            timeout: 5000,
+            signal: AbortSignal.timeout(5000) //Aborts request after 5 seconds
+          });
         } catch (err) {
           setServer(true);
           setError('Server Error');
