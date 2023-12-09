@@ -57,8 +57,6 @@ const AppContainer = () => {
           setStore(appStore);
         } catch (err) {
           setError(`Error initializing the app: ${err.message}`);
-        } finally {
-          setLoading(false);
         }
       };
   
